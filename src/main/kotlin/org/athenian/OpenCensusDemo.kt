@@ -27,7 +27,7 @@ fun main() {
     val statsRecorder = Stats.getStatsRecorder()
 
     PrometheusStatsCollector.createAndRegister()
-    val server = HTTPServer("localhost", 8888, true)
+    HTTPServer("localhost", 8888, true)
 
     Stats.getViewManager()
         .apply {
@@ -74,7 +74,7 @@ fun main() {
     while (true) {
         val timeMs = measureTimeMillis { expensiveCall() }
         println(timeMs)
-        tagger.withTagContext(tagContext).use { ss ->
+        tagger.withTagContext(tagContext).use {
             statsRecorder.newMeasureMap().put(DURATION_MS, timeMs).record()
         }
     }

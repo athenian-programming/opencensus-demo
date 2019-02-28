@@ -1,7 +1,7 @@
-default: none
+default: .build
 
-none:
-	echo "Requires argument"
+.build:
+	./gradlew assemble
 
 clean:
 	rm -rf data build
