@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version '1.3.21'
+    id "com.github.ben-manes.versions" version "0.20.0"
 }
 
 group 'org.athenian'
@@ -13,7 +14,7 @@ repositories {
     mavenLocal()
 }
 
-def opencensusVersion = '0.15.0'
+def opencensusVersion = '0.19.2'
 def junitVersion = '4.12'
 def prometheusVersion = '0.6.0'
 

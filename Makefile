@@ -5,3 +5,6 @@ none:
 
 clean:
 	rm -rf data build
+
+versioncheck:
+	./gradlew dependencyUpdates
